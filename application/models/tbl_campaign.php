@@ -5,7 +5,9 @@ class tbl_campaign extends CI_Model {
         parent::__construct();  
 	}
 	
-	
+	function getAllCampign(){
+		return $this->db->get('tbl_campaign');
+	}
 	function insertTblCampaign($param){
 		$insert['title']=$param['title'];
 		$insert['description']=$param['description'];

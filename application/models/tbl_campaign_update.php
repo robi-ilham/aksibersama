@@ -5,7 +5,11 @@ class tbl_campaign_update extends CI_Model {
         parent::__construct();  
 	}
 	
-	
+	function getCampainUpdateByCampaign($param){
+		$filter['id_campaign']=$param['id_campaign'];
+		$res=$this->db->get('tbl_campaign_update',$filter);
+		return $res;
+	}
 	function insertTblCampaignUpdate($param){
 		$insert['id_campaign']=$param['id_campaign'];
 		$insert['title']=$param['title'];

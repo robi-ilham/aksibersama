@@ -5,6 +5,9 @@ class tbl_confirm_donation extends CI_Model {
         parent::__construct();  
 	}
 	
+	function getAllConfirmDonation(){
+		return $this->db->get('tbl_confirm_donation');
+	}
 	
 	function insertTblConfirmDonation($param){
 		$insert['name']=$param['name'];

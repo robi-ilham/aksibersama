@@ -5,7 +5,9 @@ class tbl_login extends CI_Model {
         parent::__construct();  
 	}
 	
-	
+	function getAllLogin(){
+		return $this->db->get('tbl_login');
+	}
 	function insertTblLogin($param){
 		$insert['id_register']=$param['id_register'];
 		$insert['email']=$param['email'];

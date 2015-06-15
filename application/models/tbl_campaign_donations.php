@@ -5,7 +5,10 @@ class tbl_campaign_donations extends CI_Model {
         parent::__construct();  
 	}
 	
-	
+	function getAllCampainDonantions(){
+		$res = $this->db->get('tbl_campaign_donations');
+		return $res;
+	}
 	function insertTblCampaignDonations($param){
 		$insert['id_campaign']=$param['id_campaign'];
 		$insert['name']=$param['name'];

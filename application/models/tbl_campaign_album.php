@@ -5,7 +5,10 @@ class tbl_campaign_album extends CI_Model {
         parent::__construct();  
 	}
 	
-	
+	function gelAllCampainAlabum(){
+		$res=$this->db->get('tbl_campaign_album');
+		return $res;
+	}
 	function insertTblCampaignAlbum($param){
 		$insert['id_campaign']=$param['id_campaign'];
 		$insert['image']=$param['image'];
