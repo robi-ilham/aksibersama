@@ -9,6 +9,13 @@ class tbl_campaign_donations extends CI_Model {
 		$res = $this->db->get('tbl_campaign_donations');
 		return $res;
 	}
+
+	function getCampainDonantionsById($param)
+	{
+		$filter['id'] = $param['id'];
+		return $this->db->get_where('tbl_campaign_donations',$filter);
+	}
+
 	function insertTblCampaignDonations($param){
 		$insert['id_campaign']=$param['id_campaign'];
 		$insert['name']=$param['name'];

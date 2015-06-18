@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class tbl_campaign extends CI_Model {
+class Tbl_campaign extends CI_Model {
 	public function __construct(){
         parent::__construct();  
 	}
@@ -8,6 +8,12 @@ class tbl_campaign extends CI_Model {
 	function getAllCampign(){
 		return $this->db->get('tbl_campaign');
 	}
+
+	function getCampaignById($param){
+		$filter['id']=$param['id'];
+		return $this->db->get_where('tbl_campaign',$filter);
+	}
+	
 	function insertTblCampaign($param){
 		$insert['title']=$param['title'];
 		$insert['description']=$param['description'];
@@ -24,7 +30,7 @@ class tbl_campaign extends CI_Model {
 			return FALSE;
 		}
 	}
-	function updateTblRegister($param){
+	function updateTblCampaign($param){
 		$update['title']=$param['title'];
 		$update['description']=$param['description'];
 		$update['start_date']=$param['start_date'];
@@ -41,7 +47,7 @@ class tbl_campaign extends CI_Model {
 			return FALSE;
 		}
 	}
-	function deleteTblRegister($param){
+	function deleteTblCampaign($param){
 		
 		$filter['id']=$param['id'];
 		$this->db->delete('tbl_campaign',$filter);

@@ -1,12 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class tbl_confirm_donation extends CI_Model {
+class Tbl_confirm_donation extends CI_Model {
 	public function __construct(){
         parent::__construct();  
 	}
 	
 	function getAllConfirmDonation(){
 		return $this->db->get('tbl_confirm_donation');
+	}
+
+	function getConfirmDonationById($param){
+		$filter['id']=$param['id'];
+		return $this->db->get_where('tbl_confirm_donation',$filter);
 	}
 	
 	function insertTblConfirmDonation($param){
@@ -24,7 +29,7 @@ class tbl_confirm_donation extends CI_Model {
 			return FALSE;
 		}
 	}
-	function updateTblRegister($param){
+	function updateTblConfirmDonation($param){
 		$update['name']=$param['name'];
 		$update['email']=$param['email'];
 		$update['account_number']=$param['account_number'];

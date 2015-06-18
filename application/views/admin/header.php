@@ -17,6 +17,12 @@
     <!-- MetisMenu CSS -->
     <link href="<?php echo base_url();?>assets/admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
+    <!-- DataTables CSS -->
+    <link href="<?php echo base_url();?>assets/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="<?php echo base_url();?>assets/admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="<?php echo base_url();?>assets/admin/dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -57,21 +63,18 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href=" <?php echo base_url();?>adminPanel/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Campaign</a>
+                            <a href=" <?php echo base_url();?>campaign"><i class="fa fa-table fa-fw"></i> Campaign</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Registers</a>
+                            <a href=" <?php echo base_url();?>registers"><i class="fa fa-table fa-fw"></i> Registers</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-table fa-fw"></i> Confirm Dotantions</a>
-                        </li>
-                        
-                        
-                        
+                            <a href=" <?php echo base_url();?>confirmDonation"><i class="fa fa-table fa-fw"></i> Confirm Donation</a>
+                        </li>     
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

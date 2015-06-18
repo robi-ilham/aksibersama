@@ -67,7 +67,24 @@ class AdminPanel extends CI_Controller {
 	}
 	function home(){
 			//print_r($this->session->userdata());
-			$this->load->view('admin/home');
+			$this->load->model('tbl_campaign');
+			$campaign = $this->tbl_campaign->getAllCampign();
+			$total_campaign = $campaign->num_rows();
+			$this->data['total_campaign']=$total_campaign;
+
+			$this->load->model('tbl_campaign_donations');
+			$campaign_donations = $this->tbl_campaign_donations->getAllCampainDonantions();
+			$total_campaign_campaign_donations = $campaign_donations->num_rows();
+			$this->data['total_campaign_campaign_donations'] = $total_campaign_campaign_donations;
+
+			// 
+
+			$this->load->model('tbl_login');
+			$login = $this->tbl_login->getAllLogin();
+			$total_user = $login->num_rows();
+			$this->data['total_user'] = $total_user;
+
+			$this->load->view('admin/home',$this->data);
 	}
 	
 }

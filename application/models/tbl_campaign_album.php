@@ -9,10 +9,16 @@ class tbl_campaign_album extends CI_Model {
 		$res=$this->db->get('tbl_campaign_album');
 		return $res;
 	}
+
+	function getCampainAlabumById($param){
+		$filter['id']=$param['id'];
+		return $this->db->get_where('tbl_campaign_album',$filter);
+	}
+	
 	function insertTblCampaignAlbum($param){
 		$insert['id_campaign']=$param['id_campaign'];
 		$insert['image']=$param['image'];
-		$insert['caption']=$param['caption'];
+		$insert['camption']=$param['camption'];
 		
 		$this->db->insert('tbl_campaign_album',$insert);
 		if($this->db->affected_rows() > 0){
@@ -25,7 +31,7 @@ class tbl_campaign_album extends CI_Model {
 	function updateTblCampaignAlbum($param){
 		$update['id_campaign']=$param['id_campaign'];
 		$update['image']=$param['image'];
-		$update['caption']=$param['caption'];
+		$update['camption']=$param['camption'];
 		$filter['id']=$param['id'];
 		$this->db->update('tbl_campaign_album',$update,$filter);
 		if($this->db->affected_rows() > 0){
